@@ -2,6 +2,14 @@
 
 Odoo Payroll module bug fixes and task completion report — **Time Off auto-import** and **Payslip month heading** corrections.
 
+## Original Task Requirements
+
+**Payslips:** Disable the relation between Time Off Module and Payroll Module so that vacation does not affect the salary (manual adjustments are made for vacation/absences). *Note: Need to find other solution.*
+
+**Payslip Report:** The payslip heading was taking the month from the Start date of the period. It should take the **End date** month of the payslip period as the Month Heading.
+
+---
+
 ## Overview
 
 Two issues in the Odoo Payroll module were fixed and tested:
