@@ -79,6 +79,8 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .screenshot figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic; }
+    .screenshot.highlight-box { border: 2px solid var(--accent); border-radius: 12px; padding: 1rem; margin: 2rem 0; background: #f0fdfa; }
+    .screenshot.highlight-box figcaption { color: var(--text); font-style: normal; }
     .badge {
       display: inline-block;
       background: var(--success);
@@ -248,16 +250,20 @@
   </footer>
 
   <script>
-    const captions = {1:'Odoo Apps',2:'Navigation',3:'Configuration',4:'Dashboard',5:'Settings',6:'Payslips',7:'Loading',8:'Payslip list',9:'RAM LAL',10:'AAVEZ DALVI ✓',11:'January 2026 ✓',12:'RAM LAL list',13:'Paid Time Off (BEFORE)',14:'Configuration',15:'Bugs',16:'Paid Time Off',17:'CHECKED (BEFORE)',18:'CHECKED (BEFORE)',19:'UNCHECKED ✓',20:'UNCHECKED ✓',21:'UNCHECKED ✓',22:'Generic Time Off',23:'Generic',24:'Generic UNCHECKED',25:'Generic',26:'Compensatory CHECKED',27:'Compensatory UNCHECKED ✓',28:'Compensatory UNCHECKED ✓',29:'Compensatory UNCHECKED ✓',30:'Unpaid',50:'report_payslip',60:'Line 4 fix',70:'Dialog',80:'RAM LAL',90:'List',100:'UNCHECKED ✓'};
+    const captions = {1:'Odoo Apps',2:'Navigation',3:'Configuration',4:'Dashboard',5:'Settings',6:'Payslips',7:'Loading',8:'Payslip list',9:'RAM LAL',10:'AAVEZ DALVI',11:'January 2026',12:'RAM LAL list',13:'Paid Time Off (BEFORE)',14:'Configuration',15:'Bugs',16:'Paid Time Off',17:'CHECKED (BEFORE)',18:'CHECKED (BEFORE)',19:'UNCHECKED',20:'UNCHECKED',21:'UNCHECKED',22:'Generic Time Off',23:'Generic',24:'Generic UNCHECKED',25:'Generic',26:'Compensatory CHECKED',27:'Compensatory UNCHECKED',28:'Compensatory UNCHECKED',29:'Compensatory UNCHECKED',30:'Unpaid',31:'Work Entry config',32:'Configuration view',33:'Settings',34:'Work Entry form',35:'Time Off options',36:'Payslip view',37:'Configuration',38:'Report settings',39:'Views',40:'Technical menu',41:'Search report_payslip',42:'Report template',43:'Architecture tab',44:'Template code',45:'QWeb view',46:'Line 4 payslip name',47:'Edit heading',48:'Save changes',49:'Report view',50:'report_payslip',51:'View list',52:'hr_payroll.report_payslip',53:'Template Architecture',54:'Code editor',55:'payslip_name line',56:'Change to date_to',57:'Save template',58:'Payslip form',59:'Compute Sheet',60:'Line 4 fix',61:'Test payslip',62:'Print PDF',63:'December 2025 heading',64:'Report',65:'Worked Days',66:'Salary computation',67:'Employee payslip',68:'Period details',69:'Batch list',70:'Confirmation dialog',71:'Payslips list',72:'Navigation',73:'Payslip details',74:'Work Entry Types',75:'Time Off unchecked',76:'Configuration saved',78:'Payroll dashboard',79:'Payslip form',80:'RAM LAL',81:'Worked Days tab',82:'OTHER INPUTS',83:'Employee payslip',84:'Period 21/11-20/12',85:'Salary structure',86:'Batch',87:'Configuration menu',88:'Work Entry Types list',89:'Paid Time Off row',90:'Payslips list',91:'Filters',92:'Payslip entries',93:'Net Wage column',94:'Employee list',95:'Basic Wage',96:'Gross Wage',97:'Payslip summary',98:'December 2025 batch',99:'Pagination',100:'UNCHECKED'};
     const nums = [...Array(76).keys()].map(i=>i+1).concat([...Array(23).keys()].map(i=>i+78));
     const container = document.getElementById('screenshots');
     container.innerHTML = '';
     nums.forEach(n => {
       const fig = document.createElement('figure');
       fig.className = 'screenshot';
-      fig.innerHTML = `<img src="./${n}.png" alt="Figure ${n}" loading="lazy"><figcaption>Figure ${n}: ${captions[n] || 'Screenshot '+n}</figcaption>`;
+      fig.innerHTML = `<img src="./${n}.png" alt="${captions[n] || 'Screenshot '+n}" loading="lazy"><figcaption>${captions[n] || 'Configuration'}</figcaption>`;
       container.appendChild(fig);
     });
+    const marked = document.createElement('figure');
+    marked.className = 'screenshot highlight-box';
+    marked.innerHTML = '<img src="./marked-timeoff-checkbox.png" alt="Where to click - Time Off checkbox marked in red" loading="lazy"><figcaption><strong>Where to click (marked in red):</strong> Payroll → Configuration → Work Entry Types → Paid Time Off → scroll to TIME OFF OPTIONS → uncheck Time Off</figcaption>';
+    container.appendChild(marked);
   </script>
 </body>
 </html>
