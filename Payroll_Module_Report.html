@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payroll Module — Task Completion Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --accent: #0f766e;
+      --border: #e2e8f0;
+      --success: #059669;
+      --code-bg: #f1f5f9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 0;
+      border-bottom: 3px solid var(--accent);
+    }
+    h1 { font-size: 1.75rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .meta { font-size: 0.9rem; color: var(--text-muted); }
+    section {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+    }
+    h3, h4 { font-size: 1rem; font-weight: 600; margin: 1rem 0 0.5rem; color: var(--text); }
+    h4 { font-size: 0.95rem; }
+    p { margin-bottom: 0.75rem; }
+    ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    .tip {
+      background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    .simple { font-size: 1rem; color: var(--text); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    th, td { border: 1px solid var(--border); padding: 0.6rem 1rem; text-align: left; }
+    th { background: var(--accent); color: white; font-weight: 600; }
+    tr:nth-child(even) { background: #f8fafc; }
+    code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; background: var(--code-bg); padding: 0.2em 0.5em; border-radius: 4px; }
+    pre { display: block; padding: 1rem; overflow-x: auto; margin: 0.75rem 0; border: 1px solid var(--border); }
+    .screenshot { margin: 1.25rem 0; text-align: center; }
+    .screenshot img {
+      max-width: 100%; height: auto;
+      border-radius: 8px; border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .screenshot figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic; }
+    .badge {
+      display: inline-block;
+      background: var(--success);
+      color: white;
+      padding: 0.2em 0.6em;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .pdf-box {
+      border: 2px dashed var(--accent);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      background: #f0fdfa;
+    }
+    .pdf-box a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .pdf-box a:hover { text-decoration: underline; }
+    .payslip-summary { font-size: 0.95rem; }
+    .payslip-summary td:first-child { font-weight: 500; width: 50%; }
+    footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; }
+    @media print {
+      body { background: white; padding: 0; }
+      section { box-shadow: none; border: 1px solid #ddd; }
+      .screenshot img { max-height: 400px; object-fit: contain; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Payroll Module — Task Completion Report</h1>
+    <p class="meta">Submitted by: Namma Al Enjaz | March 2026 | Odoo: erpnamma-stage-26999149.dev.odoo.com</p>
+  </header>
+
+  <!-- Quick summary for reader -->
+  <section>
+    <h2>📋 What This Report Is About</h2>
+    <p class="simple">We found <strong>two problems</strong> in the Payroll system and <strong>fixed both</strong>:</p>
+    <ol class="simple">
+      <li><strong>Problem 1:</strong> Vacation days were automatically cutting salary from payslips.</li>
+      <li><strong>Problem 2:</strong> The payslip title showed the wrong month (e.g. November instead of December).</li>
+    </ol>
+    <p class="simple">Both fixes are done and tested. ✅</p>
+  </section>
+
+  <!-- PDF Section -->
+  <section>
+    <h2>📄 Payslip PDF — RAM LAL</h2>
+    <p class="simple">The payslip PDF for <strong>RAM LAL GANESHA RAM</strong> shows the fixes in action. The title now correctly says <strong>"December 2025 Payslip"</strong> (Fix 2).</p>
+    
+    <div class="pdf-box">
+      <p class="simple"><strong>View PDF:</strong></p>
+      <p><a href="Payslip - Salary Slip - RAM LAL GANESHA RAM - November 2025.pdf" target="_blank">📎 Payslip - RAM LAL GANESHA RAM - November 2025.pdf</a></p>
+    </div>
+
+    <h3>Data from the PDF (easy to read)</h3>
+    <table class="payslip-summary">
+      <tr><td>Payslip Title (Fix 2 result)</td><td><strong>December 2025 Payslip</strong> ✓</td></tr>
+      <tr><td>Employee</td><td>RAM LAL GANESHA RAM</td></tr>
+      <tr><td>Designation</td><td>Forklift Operator</td></tr>
+      <tr><td>Pay Period</td><td>21/11/2025 – 20/12/2025</td></tr>
+      <tr><td>Basic Salary (Monthly)</td><td>1,192.00 SR</td></tr>
+    </table>
+
+    <h4>Worked Days (from PDF)</h4>
+    <table>
+      <thead><tr><th>Type</th><th>Hours</th><th>Days</th><th>Amount</th></tr></thead>
+      <tbody>
+        <tr><td>Paid Time Off</td><td>96.0</td><td>12.0</td><td>476.80 SR</td></tr>
+        <tr><td>Attendance</td><td>144.0</td><td>18.0</td><td>715.20 SR</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Salary Summary</h4>
+    <table>
+      <tr><td>Gross Salary</td><td>1,872.00 SR</td></tr>
+      <tr><td>Absent Deduction</td><td>-1,185.60 SR</td></tr>
+      <tr><td><strong>Net Salary</strong></td><td><strong>686.40 SR</strong></td></tr>
+      <tr><td>GOSI (Social Insurance)</td><td>-116.22 SR</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>1. What Was Wrong (BEFORE)</h2>
+    
+    <h3>Bug 1: Vacation Cutting Salary</h3>
+    <p class="simple">RAM LAL's payslip had <strong>Paid Time Off (12 days, 96 hours, 476.80 SR)</strong> pulled automatically from the Time Off module. This was reducing his salary even when we did not want it to.</p>
+
+    <h3>Bug 2: Wrong Month in Title</h3>
+    <p class="simple">The payslip period ended in <strong>December</strong>, but the title showed <strong>"November 2025 Payslip"</strong> because it used the start date instead of the end date.</p>
+  </section>
+
+  <section>
+    <h2>2. Fix 1 — Stop Vacation from Auto-Cutting Salary</h2>
+    <p class="tip"><strong>Where:</strong> Payroll → Configuration → Work Entry Types</p>
+    <p class="simple">We opened each leave type and <strong>unchecked the "Time Off" box</strong>. This stops vacation from automatically going into the payslip.</p>
+    
+    <table>
+      <thead><tr><th>Leave Type</th><th>Code</th><th>Done</th></tr></thead>
+      <tbody>
+        <tr><td>Generic Time Off</td><td>LEAVE100</td><td><span class="badge">✓</span> Unchecked</td></tr>
+        <tr><td>Compensatory Time Off</td><td>LEAVE105</td><td><span class="badge">✓</span> Unchecked</td></tr>
+        <tr><td>Unpaid</td><td>LEAVE90</td><td><span class="badge">✓</span> Unchecked</td></tr>
+        <tr><td>Sick Time Off</td><td>LEAVE110</td><td><span class="badge">✓</span> Unchecked</td></tr>
+        <tr><td>Paid Time Off</td><td>LEAVE120</td><td><span class="badge">✓</span> Unchecked</td></tr>
+      </tbody>
+    </table>
+    
+    <p class="simple"><strong>Result:</strong> Vacation no longer auto-imports. Salary changes only when we do it manually.</p>
+  </section>
+
+  <section>
+    <h2>3. Fix 2 — Correct Month in Payslip Title</h2>
+    <p class="tip"><strong>Where:</strong> Settings → Technical → User Interface → Views → Search <code>report_payslip</code></p>
+    <p class="simple">We changed <strong>Line 4</strong> of the report so it uses the <strong>end date</strong> of the period instead of the start date.</p>
+    
+    <p class="simple"><strong>Before:</strong> Used start date → showed "November 2025"</p>
+    <pre>&lt;span t-field="o.name"&gt;August 2023 Payslip&lt;/span&gt;</pre>
+    
+    <p class="simple"><strong>After:</strong> Uses end date → shows "December 2025" ✓</p>
+    <pre>&lt;span t-esc="o.date_to.strftime('%B %Y') + ' Payslip'"/&gt;</pre>
+  </section>
+
+  <section>
+    <h2>4. Test Results</h2>
+    <table>
+      <thead><tr><th>Test</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>RAM LAL (21/11–20/12)</td><td>Title: "December 2025 Payslip" <span class="badge">✓</span></td></tr>
+        <tr><td>AAVEZ DALVI (01/01–31/01)</td><td>Title: "January 2026 Payslip" <span class="badge">✓</span></td></tr>
+        <tr><td>Time Off checkbox</td><td>Unchecked — link disabled <span class="badge">✓</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. Important Notes (Simple)</h2>
+    <ol class="simple">
+      <li><strong>Old payslips</strong> still show old data. Only <strong>new</strong> or <strong>recomputed</strong> payslips use the fix.</li>
+      <li><strong>Odoo updates</strong> might undo the report change. If that happens, re-apply the Line 4 fix or use an Inherited View.</li>
+      <li><strong>Other option later:</strong> You could keep the link on but set leave amounts to zero in Salary Structure rules. Then leave is tracked but does not cut salary.</li>
+    </ol>
+  </section>
+
+  <section id="screenshots">
+    <h2>6. Screenshots</h2>
+    <p class="simple">All screenshots (Figures 1–100, skip 77):</p>
+  </section>
+
+  <footer>
+    <p>Payroll Module Task Completion Report — Namma Al Enjaz — March 2026</p>
+  </footer>
+
+  <script>
+    const captions = {1:'Odoo Apps',2:'Navigation',3:'Configuration',4:'Dashboard',5:'Settings',6:'Payslips',7:'Loading',8:'Payslip list',9:'RAM LAL',10:'AAVEZ DALVI ✓',11:'January 2026 ✓',12:'RAM LAL list',13:'Paid Time Off (BEFORE)',14:'Configuration',15:'Bugs',16:'Paid Time Off',17:'CHECKED (BEFORE)',18:'CHECKED (BEFORE)',19:'UNCHECKED ✓',20:'UNCHECKED ✓',21:'UNCHECKED ✓',22:'Generic Time Off',23:'Generic',24:'Generic UNCHECKED',25:'Generic',26:'Compensatory CHECKED',27:'Compensatory UNCHECKED ✓',28:'Compensatory UNCHECKED ✓',29:'Compensatory UNCHECKED ✓',30:'Unpaid',50:'report_payslip',60:'Line 4 fix',70:'Dialog',80:'RAM LAL',90:'List',100:'UNCHECKED ✓'};
+    const nums = [...Array(76).keys()].map(i=>i+1).concat([...Array(23).keys()].map(i=>i+78));
+    const container = document.getElementById('screenshots');
+    container.innerHTML = '';
+    nums.forEach(n => {
+      const fig = document.createElement('figure');
+      fig.className = 'screenshot';
+      fig.innerHTML = `<img src="${n}.png" alt="Figure ${n}" loading="lazy" onerror="this.parentElement.innerHTML='<p>[Image ${n}.png not found]</p>'"><figcaption>Figure ${n}: ${captions[n] || 'Screenshot '+n}</figcaption>`;
+      container.appendChild(fig);
+    });
+  </script>
+</body>
+</html>

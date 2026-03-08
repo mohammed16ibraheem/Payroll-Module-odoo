@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    Fix 2: Payslip Report Month Heading → Use End Date
+    ==================================================
+    BEFORE: <h2 id="payslip_name"><span t-field="o.name">August 2023 Payslip</span></h2>
+            (Used o.name from date_from / Start Date)
+    AFTER:  Use o.date_to (End Date) for correct month display
+    Example: Period 21/11/2025 - 20/12/2025 → "December 2025 Payslip" (not November)
+    -->
+    <record id="report_payslip_payslip_heading_fix" model="ir.ui.view">
+        <field name="name">hr.payroll.report.payslip</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.report_payslip"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h2[@id='payslip_name']/span" position="replace">
+                <span t-esc="o.date_to.strftime('%B %Y') + ' Payslip'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

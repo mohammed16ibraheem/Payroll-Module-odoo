@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+.env
+
+# Word (optional - remove if you want to include)
+# *.docx
+
+# OS
+.DS_Store
+Thumbs.db

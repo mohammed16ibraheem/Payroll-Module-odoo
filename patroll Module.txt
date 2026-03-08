@@ -1,0 +1,6 @@
+Checking current Payroll Settings
+Check current payslip - Worked Days tab (Time Off auto import)
+Check payslip report - month heading issue
+Fix 1: Disable Time Off relation in Payroll
+Fix 2: Fix payslip report month heading to use End Date
+Test both fixes
